@@ -1,0 +1,33 @@
+import { BrowserModule } from "@angular/platform-browser";
+import { ErrorHandler, NgModule } from "@angular/core";
+import { IonicApp, IonicErrorHandler, IonicModule } from "ionic-angular";
+import { SplashScreen } from "@ionic-native/splash-screen";
+import { StatusBar } from "@ionic-native/status-bar";
+
+import { MyApp } from "./app.component";
+import { HomePage } from "../pages/home/home";
+import { HttpModule } from "@angular/http";
+import { ApiProvider } from "../providers/api/api";
+import { HttpClientModule } from "@angular/common/http";
+import { ProductsComponent } from "../components/products/products";
+import { ProductDetailsComponent } from "../components/product-details/product-details";
+
+
+@NgModule({
+  declarations: [MyApp, HomePage, ProductsComponent,ProductDetailsComponent],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(MyApp),
+    HttpModule,
+    HttpClientModule
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [MyApp, HomePage, ProductsComponent,ProductDetailsComponent],
+  providers: [
+    StatusBar,
+    SplashScreen,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    ApiProvider
+  ]
+})
+export class AppModule {}

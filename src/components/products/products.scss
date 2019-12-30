@@ -1,0 +1,85 @@
+products {
+  .scroll-content {
+    padding-top: 0px !important;
+     margin-bottom: 56px;
+  }
+  ion-content{
+    display: flex;flex-direction: column;height: 100%;
+  }
+  ion-icon {
+    float: right;
+    padding-right: 20px;
+    font-size: 30px;
+    color: white;
+  }
+  .backgroundImage,
+  .overlay {
+    min-height: 250px;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-color: #000;
+    opacity: 0.5;
+    background-size: cover;
+    background-position: center;
+  }
+
+  ion-grid {
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  ion-row {
+    height: 100%;
+    width: 70%;
+  }
+  ion-col {
+    height: 100%;
+    align-items: center;
+    border: 1px solid #d8dee9;
+    height: 100%;
+  }
+  .productImage {
+    height: 80%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .details {
+    position: absolute;
+    bottom: 0;
+    margin: 0px auto;
+    width: 100%;
+    padding: 5px;
+  }
+  .details .left{
+    width: 48%;
+    float: left;
+    padding-top: 20px;
+  }
+  .details .right{
+    width: 48%;
+    float: right;
+    padding-top: 60px;
+    padding-right: 5px;
+  }
+  .addBtn {
+    font-size: 30px;
+    float: right;
+    border-radius: 40px;
+    padding: 13px 19px;
+  }
+
+  .toolbar-md-height{
+    margin-bottom: 30px;
+  }
+  .toolbar-title-md {
+    color: white;
+  }
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+}

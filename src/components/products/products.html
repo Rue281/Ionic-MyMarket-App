@@ -1,0 +1,51 @@
+<!-- Generated template for the ProductsComponent component -->
+<ion-header no-border>
+  <ion-navbar transparent>
+    <ion-icon name="cart"></ion-icon>
+    <ion-icon name="search"></ion-icon>
+    <ion-title>{{name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <div class="backgroundImage" [style.backgroundImage]="'url(' + image + ')'">
+    <div class="overlay"></div>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 *ngFor="let product of products">
+        <div
+          class="productImage"
+          [style.backgroundImage]="'url(' + product.product_img + ')'"
+          (click)="goToProductsComponent(product.name)"
+          
+        >
+          <div class="details">
+            <div class="left"><p>{{product.name}}</p>
+              <p>{{product.weight}}</p>
+              <p>{{product.price}}</p>
+            </div>
+            <div class="right">
+              <button class="addBtn"
+              [ngStyle]="status ? {'background-color':'#FF456A'} : {'background-color':'#E0E1E0'}">
+              <i class="fa "
+               (click)="status=!status" 
+               [ngClass]="status ? 'fa-check' : 'fa-plus'"
+               ></i>
+            </button>
+          </div>
+           
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer style="background-color: #ff456a">
+  <ion-toolbar transparent>
+    <ion-title class="titlee">
+      <div class="left">Sort by</div>
+      <div class="right">Filter</div>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

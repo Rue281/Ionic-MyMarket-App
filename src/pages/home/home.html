@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+      <!-- <i class="fa fa-bars" aria-hidden="true"
+        (click)="toggleMenu()"></i> -->
+        <ion-icon name="menu" (click)="toggleMenu()"></ion-icon>
+        <ion-icon name="cart"></ion-icon>
+        <ion-icon name="search"></ion-icon>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="container" padding>
+
+  <ion-slides pager="true">
+    <ion-slide
+      *ngFor="let category of categories"
+      [style.background-image]="'url(' + category.category_img + ')'"
+    >
+    </ion-slide>
+  </ion-slides>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 *ngFor="let category of categories">
+        <div
+          class="categoryImage"
+          [style.background-image]="'url(' + category.category_img + ')'"
+          (click)="goToOtherPage(category.name,
+          category.category_img,category.products)"
+        >
+          <span>{{category.name}}</span>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
